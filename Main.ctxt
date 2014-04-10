@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=folderPath
+comment1.target=java.util.HashMap\ readFolder(java.lang.String)
+comment2.params=
+comment2.target=java.util.HashMap\ createListandFrequenciesOfWords()
+comment3.params=numOfTopWords
+comment3.target=java.lang.String[]\ mostCommonWords(int)
+comment4.params=numOfBottomWords
+comment4.target=java.lang.String[]\ leastCommonWords(int)
+numComments=5

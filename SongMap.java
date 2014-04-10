@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 public class SongMap {
-	private HashMap songCollection<String, SongRecord>;
+	private HashMap<String, SongRecord> songCollection;
 	private String folderPath = "temp/file/path/";
 	
 	public SongMap(){
@@ -14,7 +14,7 @@ public class SongMap {
 
 	public void read(String filePath){
 		File folder = new File(filePath);
-		File listOfFiles = folder.listFiles();
+		File[] listOfFiles = folder.listFiles();
 		for(File file : listOfFiles){
 			if(file.isFile()){
 				//check if you can read file
@@ -77,15 +77,3 @@ public class SongMap {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-}

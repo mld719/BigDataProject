@@ -43,6 +43,7 @@ public class SongMap {
         		SongRecord record = new SongRecord(filename, lyrics);
         		String artistAndSong = record.getArtist() + " - " + record.getSongName();
             	songCollection.put(artistAndSong, record);
+            	scanner.close();
 			}
 		}
 	}

@@ -46,7 +46,7 @@ public class WordCount {
     map = _map;
   }
 
-  public void Count(){
+  public void count(){
   // Create a TreeMap to hold the data.  Read the lyrics and record
   // data in the map about the words that are found in the lyrics.
   TreeMap<String,WordData> words = new TreeMap<String,WordData>();

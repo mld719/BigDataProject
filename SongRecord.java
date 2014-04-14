@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import java.io.*;
 import java.util.*;
+=======
+// Authors: Cody Frenzel & Megan DeLaunay
+>>>>>>> FETCH_HEAD
 
 public class SongRecord {
 	private String artist;
@@ -14,9 +18,15 @@ public class SongRecord {
 		rank = 0;
 	}
 
+<<<<<<< HEAD
 	public SongRecord(File file, String _lyrics){
 		//get key which is artist and song, get the rank
         String[] filename = file.getName().split(" -- ");
+=======
+	public SongRecord(String file, String _lyrics){
+		//get key which is artist and song, get the rank
+        String[] fileName = file.getName().split(" -- ");
+>>>>>>> FETCH_HEAD
         rank = Integer.parseInt(filename[0]);
         // each file ends in "... song .txt" to end at the g is 6 spaces
         int fileEnding = 6; 
@@ -39,7 +49,11 @@ public class SongRecord {
 		return lyrics;
 	}
 
+<<<<<<< HEAD
 	public int getRank(){
+=======
+	public String getRank(){
+>>>>>>> FETCH_HEAD
 		return rank;
 	}
 

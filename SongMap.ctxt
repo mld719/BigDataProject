@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=SongMap()
+comment1.params=filePath
+comment1.target=void\ read(java.lang.String)
+comment2.params=artistName
+comment2.target=void\ songsByArtist(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ topArtist()
+numComments=4

@@ -92,13 +92,62 @@ public class SongMap {
 
 	public String mostWords(){
 		String most = "";
+		int mostWords = 0;
 		Set<String> songSet = songCollection.keySet();
-		Iterator iter = songSet.iterator();
-		while (iter.hasNext()){
-			String next = iter.next();
-			Scanner scanner = new Scanner()
+		
+		for(String next : songSet){
+			int tmpMost = 0;
+			SongRecord record = songCollection.get(next);
+			Scanner scanner = new Scanner(record.getLyrics);
+			while(scanner.hasNext()){
+				String tmp = scanner.next();
+				tmpMost++;
+			}
 
+			if(tmpMost > mostWords){
+				mostWords = tmpMost;
+				most = next;
+			}
+
+			scanner.close;
 		}
+
+		most = "The song with the most words is (" + most + ") with " + Integer.toString(mostWords) + " words!";
+		return most;
+
+	}
+
+	public String leastWords(){
+		String least = "";
+		int leastWords = 0;
+		int index = 1;
+		Set<String> songSet = songCollection.keySet();
+		
+		for(String next : songSet){
+			int tmpLeast = 0;
+			SongRecord record = songCollection.get(next);
+			Scanner scanner = new Scanner(record.getLyrics);
+			while(scanner.hasNext()){
+				String tmp = scanner.next();
+				tmpLeast++;
+			}
+
+			//only for first case to set this as the least
+			if(index == 1){
+				leastWords = tmpLeast;
+				least = next;
+			
+			} else if(tmpLeast < leastWords){
+				leastWords = tmpLeast;
+				least = next;
+			}
+
+			index++;
+			scanner.close;
+		}
+
+		most = "The song with the least words is (" + least + ") with " + Integer.toString(leastWords) + " words!";
+		return least;
 
 	}	
 }

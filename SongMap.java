@@ -48,32 +48,44 @@ public class SongMap {
 		}
 	}
 
-	public void songsByArtist(String artistName){
+	public HashMap<String, SongRecord> songsByArtist(String artistName){
+		HashMap<String, SongRecord> artistMap = new HashMap<String, SongRecord>();
 		Set<String> songSet = songCollection.keySet();
 		Iterator iter = songSet.iterator();
-		int numSongs = 0;
 		while(iter.hasNext()){
 			String next = iter.next();
 			if(next.contains(artistName)){
-				numSongs++;
 				SongRecord record = songCollection.get(next);
-				
-				System.out.print("#" + record.getRank() + ". " + record.getSongName() +
+				artistMap.put(next, record);
+			}
+		}
+
+		if(artistMap.size() == 0){
+			System.out.println("There were no results for: " + artistName);
+			System.exit(1);
+		}
+
+		return artistMap;
+	}
+
+	public void print(HasMap<String, SongRecord> map){
+		if(map.size() <= 0){
+			System.out.println("There was no data in the map to be printed");
+			Sytem.exit(1);
+		}
+		Set<String> songSet = map.keySet();
+		Iterator iter = songSet.iterator();
+		while(iter.hasNext()){
+			String next = iter.next();
+			if(next.contains(artistName)){
+				SongRecord record = songCollection.get(next);				
+				System.out.print("#" + record.getRank() + "  " + record.getSongName() +
 				 	" by " + record.getArtist() + ": " + "\n" + record.getLyrics());
 				System.out.println("----------------------------------------------------");
 
 			}
 		}
-
-		if(numSongs == 0){
-			System.out.println("There were no results that matched: " + artistName);
-		}
-	}
-
-
-	
-
-
+	}	
 }
 
 

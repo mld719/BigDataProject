@@ -56,9 +56,7 @@ public class SongMap {
 	public HashMap<String, SongRecord> songsByArtist(String artistName){
 		HashMap<String, SongRecord> artistMap = new HashMap<String, SongRecord>();
 		Set<String> songSet = songCollection.keySet();
-		Iterator iter = songSet.iterator();
-		while(iter.hasNext()){
-			String next = iter.next();
+		for(String next : songSet){
 			if(next.contains(artistName)){
 				SongRecord record = songCollection.get(next);
 				artistMap.put(next, record);
@@ -74,15 +72,14 @@ public class SongMap {
 	}
 
 	// static method that prints the content of a specified map
-	public static void print(HasMap<String, SongRecord> map){
+	public static void print(HashMap<String, SongRecord> map){
 		if(map.size() <= 0){
 			System.out.println("There was no data in the map to be printed");
 			Sytem.exit(1);
 		}
+
 		Set<String> songSet = map.keySet();
-		Iterator iter = songSet.iterator();
-		while(iter.hasNext()){
-			String next = iter.next();
+		for(String next : sonSet){
 			if(next.contains(artistName)){
 				SongRecord record = songCollection.get(next);				
 				System.out.print("#" + record.getRank() + "  " + record.getSongName() +
@@ -91,6 +88,18 @@ public class SongMap {
 
 			}
 		}
+	}
+
+	public String mostWords(){
+		String most = "";
+		Set<String> songSet = songCollection.keySet();
+		Iterator iter = songSet.iterator();
+		while (iter.hasNext()){
+			String next = iter.next();
+			Scanner scanner = new Scanner()
+
+		}
+
 	}	
 }
 

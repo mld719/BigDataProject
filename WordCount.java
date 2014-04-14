@@ -51,9 +51,7 @@ public class WordCount {
   // data in the map about the words that are found in the lyrics.
   TreeMap<String,WordData> words = new TreeMap<String,WordData>();
   Set<String> songSet = map.keySet();
-  Iterator iter = songSet.iterator();
-  while(iter.hasNext()){
-    String nextKey = iter.next();
+  for(String nextKey : songSet){
     SongRecord record = map.get(nextKey);  
     Scanner scanner = new Scanner(record.getLyrics());
 

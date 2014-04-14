@@ -48,6 +48,11 @@ public class SongMap {
 		}
 	}
 
+	/* This method now searches the map for all keys containing the 
+	* specified artist and places all of those values in a new map for the
+	* given artist. This will allow us to compare a few artists or one instead
+	* of computing wordcount for the entire collection
+	*/
 	public HashMap<String, SongRecord> songsByArtist(String artistName){
 		HashMap<String, SongRecord> artistMap = new HashMap<String, SongRecord>();
 		Set<String> songSet = songCollection.keySet();
@@ -68,7 +73,8 @@ public class SongMap {
 		return artistMap;
 	}
 
-	public void print(HasMap<String, SongRecord> map){
+	// static method that prints the content of a specified map
+	public static void print(HasMap<String, SongRecord> map){
 		if(map.size() <= 0){
 			System.out.println("There was no data in the map to be printed");
 			Sytem.exit(1);
